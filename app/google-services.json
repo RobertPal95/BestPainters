@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "555329866412",
+    "firebase_url": "https://bestpainters-2dd45.firebaseio.com",
+    "project_id": "bestpainters-2dd45",
+    "storage_bucket": "bestpainters-2dd45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555329866412:android:f6d4c152bd2f5ef0",
+        "android_client_info": {
+          "package_name": "com.example.android.bestpainters"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555329866412-cft3gs80gek1gmh1j23e903skbcmmap1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.bestpainters",
+            "certificate_hash": "a656b3069acdaaccefc322dccc25e87e16feb991"
+          }
+        },
+        {
+          "client_id": "555329866412-l0kq9rtthm60ap5orqbk43shim0q5o23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8xucrbEWq4gH6nAX2MUF_pFpSOK4qzek"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555329866412-l0kq9rtthm60ap5orqbk43shim0q5o23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
