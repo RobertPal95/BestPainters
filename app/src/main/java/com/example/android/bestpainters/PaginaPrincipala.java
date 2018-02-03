@@ -4,16 +4,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class PaginaPrincipala extends AppCompatActivity {
 
+    private static final String TAG = "MyActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_principala);
-        scrieInFirebase();
+        //scrieInFirebase();
+        afiseazaDinFirebase();
     }
 
     void scrieInFirebase() {
@@ -29,8 +35,40 @@ public class PaginaPrincipala extends AppCompatActivity {
         }
     }
 
+    void afiseazaDinFirebase() {
+        final TextView pictori_tvj = findViewById(R.id.pictori_tvx); // pentru a afisa tablourile in TextView
+        DatabaseReference referintaFB = FirebaseDatabase.getInstance().getReference(); // pentru a citi din Firebase
+
+        referintaFB.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChild) {
+                pictori_tvj.append(snapshot.getKey() + ": " + snapshot.getValue() + "\n\n\n");
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     String[] pictori_f() {
-        return new String[] {
+        return new String[]{
                 "Pablo Picasso",
                 "Vincent van Gogh",
                 "Leonardo da Vinci",
@@ -52,7 +90,7 @@ public class PaginaPrincipala extends AppCompatActivity {
     }
 
     String[] tablouri_f() {
-        return new String[] {
+        return new String[]{
                 "Guernica",
                 "Noapte instelata",
                 "Mona Lisa",
